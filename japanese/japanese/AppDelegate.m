@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "MainViewController.h"
+#import "QingYinViewController.h"
+#import "MainTabViewController.h"
 
 @interface AppDelegate ()
 
@@ -18,10 +19,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    MainViewController *mainview = [[MainViewController alloc] init];
-    UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:mainview];
+//    QingYinViewController *mainview = [[QingYinViewController alloc] init];
+//    UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:mainview];
+    MainTabViewController *tabViewController = [[MainTabViewController alloc] init];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = controller;
+    self.window.rootViewController = tabViewController;
     self.window.backgroundColor = [UIColor grayColor];
     [self.window makeKeyAndVisible];
     return YES;

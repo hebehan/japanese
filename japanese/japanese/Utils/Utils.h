@@ -10,5 +10,8 @@
 
 @interface Utils : NSObject
 
-+(NSMutableArray *)getSoundArray;
++(NSMutableArray *)getQYSoundArray;
++(NSMutableArray *)getQAYSoundArray;
++(NSMutableArray *)getZYSoundArray;
++(NSMutableArray *)getZAYSoundArray;
 @end

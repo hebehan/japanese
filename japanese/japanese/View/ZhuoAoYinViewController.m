@@ -1,21 +1,22 @@
 //
-//  MainViewController.m
+//  QingYinViewController.m
 //  japanese
 //
 //  Created by Hebe on 2016/10/27.
 //  Copyright © 2016年 Hebe. All rights reserved.
 //
 
-#import "MainViewController.h"
 #import "SoundCell.h"
 #import "Utils.h"
 #import "SoundBean.h"
+#import "PeekSoundPreViewController.h"
+#import "ZhuoAoYinViewController.h"
 
-@interface MainViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
+@interface ZhuoAoYinViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UIViewControllerPreviewingDelegate>
 
 @end
 
-@implementation MainViewController{
+@implementation ZhuoAoYinViewController{
     UICollectionView *jpCollectionView;
     CGFloat linespace;
     NSMutableArray *soundArray;
@@ -26,12 +27,12 @@
     linespace = 2.0f;
     UICollectionViewFlowLayout *viewFlowLayout = [[UICollectionViewFlowLayout alloc] init];
     [viewFlowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
-    jpCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0,StartY,self.view.frame.size.width,self.view.frame.size.height-StartY) collectionViewLayout:viewFlowLayout];
+    jpCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0,0,self.view.frame.size.width,self.view.frame.size.height-StartY) collectionViewLayout:viewFlowLayout];
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
     jpCollectionView.delegate = self;
     jpCollectionView.dataSource = self;
     [jpCollectionView registerClass:[SoundCell class] forCellWithReuseIdentifier:@"cell"];
-    soundArray = Utils.getSoundArray;
+    soundArray = Utils.getZAYSoundArray;
     jpCollectionView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:jpCollectionView];
 }
@@ -52,7 +53,23 @@
     cell.pingjia.text = bean.pingjia;
     cell.pianjia.text = bean.pianjia;
     cell.luoma.text = bean.luoma;
+    if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {//判断3Dtouch是否可用
+        [self registerForPreviewingWithDelegate:self sourceView:cell];
+    }
     return cell;
+}
+
+- (UIViewController *)previewingContext:(id <UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
+        if ([self.presentedViewController isKindOfClass:[PeekSoundPreViewController class]]){
+            return nil;
+        } else{
+            PeekSoundPreViewController *peekSoundPreViewController = [[PeekSoundPreViewController alloc] init];
+            NSLog(@"%@",NSStringFromCGPoint(location));
+            NSIndexPath *path = [jpCollectionView indexPathForCell:[previewingContext sourceView]];
+            NSLog(@"%@",path.description);
+            peekSoundPreViewController.bean = [soundArray objectAtIndex:path.row];
+            return peekSoundPreViewController;
+        }
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -61,12 +78,12 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     SoundBean *bean = [soundArray objectAtIndex:indexPath.row];
-    NSLog(@"%@",bean.description);
+    NSLog(@"%@",indexPath.description);
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
 
-    return CGSizeMake((self.view.frame.size.width-linespace*4)/5,(self.view.frame.size.width-linespace*4)/5);
+    return CGSizeMake((self.view.frame.size.width-linespace*2)/3,(self.view.frame.size.width-linespace*4)/5);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {

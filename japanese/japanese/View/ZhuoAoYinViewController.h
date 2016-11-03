@@ -1,5 +1,5 @@
 //
-//  MainViewController.h
+//  QingYinViewController.h
 //  japanese
 //
 //  Created by Hebe on 2016/10/27.
@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface MainViewController : BaseViewController
+@interface ZhuoAoYinViewController : BaseViewController
 
 
 @end

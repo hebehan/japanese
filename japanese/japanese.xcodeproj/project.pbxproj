@@ -7,35 +7,65 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		224220682803BCE7F65919AC /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 224228F2336607D8F1A7F5AF /* SettingViewController.m */; };
 		22422175A72266A7CE67CEFC /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2242211B61000C69D40F98FA /* Utils.m */; };
+		224222D17FC76479B262D971 /* YSLContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22422354B524BD32787FCCA8 /* YSLContainerViewController.m */; };
+		224222EFB4BEA08F55B8B355 /* MainTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22422C9489362B7F810F747C /* MainTabViewController.m */; };
+		224222F17E03203F18B8F65A /* PeekSoundPreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22422EA9B8F90D44232F4B79 /* PeekSoundPreViewController.m */; };
 		22422365FFB47EB182A90C90 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2242252F2471908F2645D687 /* BaseViewController.m */; };
+		2242258F5072253A0EAE974E /* QingAoYinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22422606A6BD8C1ACDB8DA82 /* QingAoYinViewController.m */; };
+		2242270846A50C84C0E522E9 /* YSLScrollMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2242245D24307B776E983732 /* YSLScrollMenuView.m */; };
 		224227862E0AD3E49BC6E6CC /* SoundCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 224224D94FC0BEAD4A7CDA42 /* SoundCell.m */; };
 		2242279DF518B095363FFFE9 /* SoundBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 22422F16EB7EF991E9C56CA9 /* SoundBean.m */; };
+		22422886FE1825E0E6D77E89 /* ZhuoYinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2242255AF2DE0C4B4C011F14 /* ZhuoYinViewController.m */; };
+		224229AD0DD285C061FB83AF /* ZhuoAoYinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 224226515CD54439D580E862 /* ZhuoAoYinViewController.m */; };
+		22422A269C70816DC6917C09 /* CheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 224225400AC0E2D590B9E7EF /* CheckViewController.m */; };
+		22422A8D63B761311C8C766F /* SoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 224226EF63B03BBFC8817EA7 /* SoundViewController.m */; };
+		22422EDC20FBE9DBE6D82812 /* QingYinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2242259938D96D92E8423ED2 /* QingYinViewController.m */; };
 		81F0DF721DC1DD5C00896C98 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F0DF711DC1DD5C00896C98 /* main.m */; };
 		81F0DF751DC1DD5C00896C98 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F0DF741DC1DD5C00896C98 /* AppDelegate.m */; };
-		81F0DF781DC1DD5C00896C98 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F0DF771DC1DD5C00896C98 /* MainViewController.m */; };
 		81F0DF7B1DC1DD5C00896C98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81F0DF791DC1DD5C00896C98 /* Main.storyboard */; };
 		81F0DF7D1DC1DD5C00896C98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81F0DF7C1DC1DD5C00896C98 /* Assets.xcassets */; };
 		81F0DF801DC1DD5C00896C98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81F0DF7E1DC1DD5C00896C98 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		224220AB276A9D0169E2A363 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		2242211B61000C69D40F98FA /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		22422140258DD80F44EC4E54 /* QingAoYinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QingAoYinViewController.h; sourceTree = "<group>"; };
+		22422178A6ECFB9E0FCE8286 /* QingYinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QingYinViewController.h; sourceTree = "<group>"; };
 		224222FA703A4F81691ACD51 /* SoundCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundCell.h; sourceTree = "<group>"; };
 		224223374D7DAF645787706A /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		22422354B524BD32787FCCA8 /* YSLContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSLContainerViewController.m; sourceTree = "<group>"; };
+		2242245D24307B776E983732 /* YSLScrollMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSLScrollMenuView.m; sourceTree = "<group>"; };
+		224224D058A129C8F552941E /* SoundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundViewController.h; sourceTree = "<group>"; };
 		224224D94FC0BEAD4A7CDA42 /* SoundCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundCell.m; sourceTree = "<group>"; };
 		2242252F2471908F2645D687 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		224225400AC0E2D590B9E7EF /* CheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckViewController.m; sourceTree = "<group>"; };
+		2242255AF2DE0C4B4C011F14 /* ZhuoYinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZhuoYinViewController.m; sourceTree = "<group>"; };
+		2242259938D96D92E8423ED2 /* QingYinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QingYinViewController.m; sourceTree = "<group>"; };
+		224225A231A2B0B6B19BA998 /* CheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckViewController.h; sourceTree = "<group>"; };
+		224225DE7B5B51CABBEEDEC5 /* ZhuoAoYinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZhuoAoYinViewController.h; sourceTree = "<group>"; };
+		22422606A6BD8C1ACDB8DA82 /* QingAoYinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QingAoYinViewController.m; sourceTree = "<group>"; };
+		2242261382D53ADAB1559797 /* YSLContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSLContainerViewController.h; sourceTree = "<group>"; };
+		224226515CD54439D580E862 /* ZhuoAoYinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZhuoAoYinViewController.m; sourceTree = "<group>"; };
+		224226EF63B03BBFC8817EA7 /* SoundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundViewController.m; sourceTree = "<group>"; };
+		224228F2336607D8F1A7F5AF /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		22422981AD4F354FB13D2F93 /* ZhuoYinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZhuoYinViewController.h; sourceTree = "<group>"; };
 		22422AEC8CCBA689F8885410 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		22422C9489362B7F810F747C /* MainTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabViewController.m; sourceTree = "<group>"; };
 		22422D0292E658F4E2BEA77E /* AppConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConstant.h; sourceTree = "<group>"; };
 		22422D1A6FB34E7707672D39 /* SoundBean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundBean.h; sourceTree = "<group>"; };
+		22422D5EC5A4C34B3A4C2E3A /* YSLScrollMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSLScrollMenuView.h; sourceTree = "<group>"; };
+		22422D7C5EE9823D56CBCA13 /* MainTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabViewController.h; sourceTree = "<group>"; };
+		22422EA9B8F90D44232F4B79 /* PeekSoundPreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeekSoundPreViewController.m; sourceTree = "<group>"; };
 		22422F16EB7EF991E9C56CA9 /* SoundBean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundBean.m; sourceTree = "<group>"; };
+		22422FC1662ED31387101384 /* PeekSoundPreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeekSoundPreViewController.h; sourceTree = "<group>"; };
 		81DFD44C1DC1F61E006E2DA3 /* JapanesePrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JapanesePrefixHeader.pch; sourceTree = "<group>"; };
 		81F0DF6D1DC1DD5C00896C98 /* japanese.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = japanese.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81F0DF711DC1DD5C00896C98 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		81F0DF731DC1DD5C00896C98 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		81F0DF741DC1DD5C00896C98 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		81F0DF761DC1DD5C00896C98 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		81F0DF771DC1DD5C00896C98 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		81F0DF7A1DC1DD5C00896C98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		81F0DF7C1DC1DD5C00896C98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81F0DF7F1DC1DD5C00896C98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,9 +83,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2242229BEF31A7B819F0FE0E /* YSLContainerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				22422D5EC5A4C34B3A4C2E3A /* YSLScrollMenuView.h */,
+				2242245D24307B776E983732 /* YSLScrollMenuView.m */,
+				2242261382D53ADAB1559797 /* YSLContainerViewController.h */,
+				22422354B524BD32787FCCA8 /* YSLContainerViewController.m */,
+			);
+			path = YSLContainerViewController;
+			sourceTree = "<group>";
+		};
 		224226664C2D4086DCD3720E /* Widget */ = {
 			isa = PBXGroup;
 			children = (
+				2242229BEF31A7B819F0FE0E /* YSLContainerViewController */,
 			);
 			path = Widget;
 			sourceTree = "<group>";
@@ -67,6 +109,31 @@
 				22422F16EB7EF991E9C56CA9 /* SoundBean.m */,
 			);
 			path = Bean;
+			sourceTree = "<group>";
+		};
+		22422687A75208431AF0FD95 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				22422178A6ECFB9E0FCE8286 /* QingYinViewController.h */,
+				2242259938D96D92E8423ED2 /* QingYinViewController.m */,
+				22422FC1662ED31387101384 /* PeekSoundPreViewController.h */,
+				22422EA9B8F90D44232F4B79 /* PeekSoundPreViewController.m */,
+				22422D7C5EE9823D56CBCA13 /* MainTabViewController.h */,
+				22422C9489362B7F810F747C /* MainTabViewController.m */,
+				22422606A6BD8C1ACDB8DA82 /* QingAoYinViewController.m */,
+				22422140258DD80F44EC4E54 /* QingAoYinViewController.h */,
+				2242255AF2DE0C4B4C011F14 /* ZhuoYinViewController.m */,
+				22422981AD4F354FB13D2F93 /* ZhuoYinViewController.h */,
+				224226515CD54439D580E862 /* ZhuoAoYinViewController.m */,
+				224225DE7B5B51CABBEEDEC5 /* ZhuoAoYinViewController.h */,
+				224224D058A129C8F552941E /* SoundViewController.h */,
+				224226EF63B03BBFC8817EA7 /* SoundViewController.m */,
+				224225A231A2B0B6B19BA998 /* CheckViewController.h */,
+				224225400AC0E2D590B9E7EF /* CheckViewController.m */,
+				224220AB276A9D0169E2A363 /* SettingViewController.h */,
+				224228F2336607D8F1A7F5AF /* SettingViewController.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		224227270E90C8A41B94770A /* Utils */ = {
@@ -117,8 +184,6 @@
 			children = (
 				81F0DF731DC1DD5C00896C98 /* AppDelegate.h */,
 				81F0DF741DC1DD5C00896C98 /* AppDelegate.m */,
-				81F0DF761DC1DD5C00896C98 /* MainViewController.h */,
-				81F0DF771DC1DD5C00896C98 /* MainViewController.m */,
 				81F0DF791DC1DD5C00896C98 /* Main.storyboard */,
 				81F0DF7C1DC1DD5C00896C98 /* Assets.xcassets */,
 				81F0DF7E1DC1DD5C00896C98 /* LaunchScreen.storyboard */,
@@ -131,6 +196,7 @@
 				22422C0713518C9D53B1AF6F /* ItemCell */,
 				2242266FFBF6DF2F34F4AB7D /* Bean */,
 				224227270E90C8A41B94770A /* Utils */,
+				22422687A75208431AF0FD95 /* View */,
 			);
 			path = japanese;
 			sourceTree = "<group>";
@@ -215,13 +281,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81F0DF781DC1DD5C00896C98 /* MainViewController.m in Sources */,
 				81F0DF751DC1DD5C00896C98 /* AppDelegate.m in Sources */,
 				81F0DF721DC1DD5C00896C98 /* main.m in Sources */,
 				22422365FFB47EB182A90C90 /* BaseViewController.m in Sources */,
 				224227862E0AD3E49BC6E6CC /* SoundCell.m in Sources */,
 				2242279DF518B095363FFFE9 /* SoundBean.m in Sources */,
 				22422175A72266A7CE67CEFC /* Utils.m in Sources */,
+				22422EDC20FBE9DBE6D82812 /* QingYinViewController.m in Sources */,
+				224222F17E03203F18B8F65A /* PeekSoundPreViewController.m in Sources */,
+				2242270846A50C84C0E522E9 /* YSLScrollMenuView.m in Sources */,
+				224222D17FC76479B262D971 /* YSLContainerViewController.m in Sources */,
+				224222EFB4BEA08F55B8B355 /* MainTabViewController.m in Sources */,
+				2242258F5072253A0EAE974E /* QingAoYinViewController.m in Sources */,
+				22422886FE1825E0E6D77E89 /* ZhuoYinViewController.m in Sources */,
+				224229AD0DD285C061FB83AF /* ZhuoAoYinViewController.m in Sources */,
+				22422A8D63B761311C8C766F /* SoundViewController.m in Sources */,
+				22422A269C70816DC6917C09 /* CheckViewController.m in Sources */,
+				224220682803BCE7F65919AC /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +363,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -328,7 +404,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -339,6 +415,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = TLGTZY7736;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/japanese/JapanesePrefixHeader.pch";
@@ -354,6 +431,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = TLGTZY7736;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/japanese/JapanesePrefixHeader.pch";
