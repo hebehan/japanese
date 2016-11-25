@@ -6,7 +6,6 @@
 //  Copyright (c) 2016 Hebe. All rights reserved.
 //
 
-#import "QingYinViewController.h"
 #import "MainTabViewController.h"
 #import "SoundViewController.h"
 #import "CheckViewController.h"

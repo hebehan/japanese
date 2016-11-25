@@ -8,8 +8,10 @@
 
 #import "BaseViewController.h"
 
-@interface ZhuoAoYinViewController : BaseViewController
+@interface SoundPageViewController : BaseViewController
 
+@property (nonatomic, copy) NSMutableArray *soundArray;
+@property (nonatomic, assign) NSInteger soundType;
 
 @end
 

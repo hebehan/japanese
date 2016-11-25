@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "QingYinViewController.h"
 #import "MainTabViewController.h"
 
 @interface AppDelegate ()

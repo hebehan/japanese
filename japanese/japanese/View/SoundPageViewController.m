@@ -6,33 +6,32 @@
 //  Copyright © 2016年 Hebe. All rights reserved.
 //
 
+#import <AVFoundation/AVFoundation.h>
 #import "SoundCell.h"
-#import "Utils.h"
 #import "SoundBean.h"
 #import "PeekSoundPreViewController.h"
-#import "ZhuoAoYinViewController.h"
+#import "SoundPageViewController.h"
 
-@interface ZhuoAoYinViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UIViewControllerPreviewingDelegate>
+@interface SoundPageViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UIViewControllerPreviewingDelegate,AVAudioPlayerDelegate>
 
 @end
 
-@implementation ZhuoAoYinViewController{
+@implementation SoundPageViewController{
     UICollectionView *jpCollectionView;
     CGFloat linespace;
-    NSMutableArray *soundArray;
+    AVAudioPlayer *player;
 }
-
+@synthesize soundArray;
+@synthesize soundType;
 - (void)viewDidLoad {
-    self.title = @"日语50音";
     linespace = 2.0f;
     UICollectionViewFlowLayout *viewFlowLayout = [[UICollectionViewFlowLayout alloc] init];
     [viewFlowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
-    jpCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0,0,self.view.frame.size.width,self.view.frame.size.height-StartY) collectionViewLayout:viewFlowLayout];
+    jpCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0,0,self.view.frame.size.width,self.view.frame.size.height-StartY-TabBarHeight-40) collectionViewLayout:viewFlowLayout];
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
     jpCollectionView.delegate = self;
     jpCollectionView.dataSource = self;
     [jpCollectionView registerClass:[SoundCell class] forCellWithReuseIdentifier:@"cell"];
-    soundArray = Utils.getZAYSoundArray;
     jpCollectionView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:jpCollectionView];
 }
@@ -78,12 +77,20 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     SoundBean *bean = [soundArray objectAtIndex:indexPath.row];
+    [self play:bean.luoma];
+    NSLog(@"%@", [NSString stringWithFormat:@"%@.mp3",bean.luoma]);
+    NSLog(@"%@", [[NSBundle mainBundle] pathForResource:@"info.plist" ofType:nil]);
     NSLog(@"%@",indexPath.description);
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-
-    return CGSizeMake((self.view.frame.size.width-linespace*2)/3,(self.view.frame.size.width-linespace*4)/5);
+    int widthnumber;
+    if (soundType == 1 || soundType == 3){
+        widthnumber = 5;
+    } else{
+        widthnumber = 3;
+    }
+    return CGSizeMake((self.view.frame.size.width-linespace*(widthnumber-1))/widthnumber,(self.view.frame.size.width-linespace*4)/5);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
@@ -92,6 +99,24 @@
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
     return linespace;
+}
+
+-(void)play:(NSString *)luomayin{
+    if (player){
+        [player stop];
+        player = nil;
+    }
+    NSString *path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@",luomayin] ofType:@"mp3"];
+    NSLog(@"%@", path);
+    player = [[AVAudioPlayer alloc] initWithContentsOfURL:[[NSURL alloc] initFileURLWithPath:path] error:nil];
+    player.delegate = self;
+    [player play];
+}
+
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
+    if (player){
+        player = nil;
+    }
 }
 
 @end

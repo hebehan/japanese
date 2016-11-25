@@ -7,6 +7,7 @@
 //
 
 #import "UIKit/UIKit.h"
+#import "AVFoundation/AVFoundation.h"
 
 @interface Utils : NSObject
 
@@ -14,4 +15,5 @@
 +(NSMutableArray *)getQAYSoundArray;
 +(NSMutableArray *)getZYSoundArray;
 +(NSMutableArray *)getZAYSoundArray;
+
 @end

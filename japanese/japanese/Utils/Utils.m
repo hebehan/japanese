@@ -210,14 +210,14 @@
 
 
     SoundBean *za = [[SoundBean alloc] initWith:@"ざ" pianjia:@"ザ" luoma:@"za"];
-    SoundBean *zi = [[SoundBean alloc] initWith:@"じ" pianjia:@"ジ" luoma:@"zi"];
+    SoundBean *zi = [[SoundBean alloc] initWith:@"じ" pianjia:@"ジ" luoma:@"ji"];
     SoundBean *zu = [[SoundBean alloc] initWith:@"ず" pianjia:@"ズ" luoma:@"zu"];
     SoundBean *ze = [[SoundBean alloc] initWith:@"ぜ" pianjia:@"ゼ" luoma:@"ze"];
     SoundBean *zo = [[SoundBean alloc] initWith:@"ぞ" pianjia:@"ゾ" luoma:@"zo"];
 
     SoundBean *da = [[SoundBean alloc] initWith:@"だ" pianjia:@"ダ" luoma:@"da"];
-    SoundBean *di = [[SoundBean alloc] initWith:@"ぢ" pianjia:@"ヂ" luoma:@"di"];
-    SoundBean *du = [[SoundBean alloc] initWith:@"づ" pianjia:@"ヅ" luoma:@"du"];
+    SoundBean *di = [[SoundBean alloc] initWith:@"ぢ" pianjia:@"ヂ" luoma:@"ji"];
+    SoundBean *du = [[SoundBean alloc] initWith:@"づ" pianjia:@"ヅ" luoma:@"zu"];
     SoundBean *de = [[SoundBean alloc] initWith:@"で" pianjia:@"デ" luoma:@"de"];
     SoundBean *dou = [[SoundBean alloc] initWith:@"ど" pianjia:@"ド" luoma:@"do"];
 
@@ -305,4 +305,6 @@
 
     return  soundarray;
 }
+
+
 @end
