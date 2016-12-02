@@ -1,5 +1,5 @@
 //
-//  QingYinViewController.m
+//  SoundPageViewController.m
 //  japanese
 //
 //  Created by Hebe on 2016/10/27.
@@ -18,13 +18,13 @@
 
 @implementation SoundPageViewController{
     UICollectionView *jpCollectionView;
-    CGFloat linespace;
+    NSInteger linespace;
     AVAudioPlayer *player;
 }
 @synthesize soundArray;
 @synthesize soundType;
 - (void)viewDidLoad {
-    linespace = 2.0f;
+    linespace = 3;
     UICollectionViewFlowLayout *viewFlowLayout = [[UICollectionViewFlowLayout alloc] init];
     [viewFlowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     jpCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0,0,self.view.frame.size.width,self.view.frame.size.height-StartY-TabBarHeight-40) collectionViewLayout:viewFlowLayout];
@@ -78,9 +78,6 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     SoundBean *bean = [soundArray objectAtIndex:indexPath.row];
     [self play:bean.luoma];
-    NSLog(@"%@", [NSString stringWithFormat:@"%@.mp3",bean.luoma]);
-    NSLog(@"%@", [[NSBundle mainBundle] pathForResource:@"info.plist" ofType:nil]);
-    NSLog(@"%@",indexPath.description);
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -93,6 +90,7 @@
     return CGSizeMake((self.view.frame.size.width-linespace*(widthnumber-1))/widthnumber,(self.view.frame.size.width-linespace*4)/5);
 }
 
+
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
     return linespace;
 }
@@ -100,7 +98,6 @@
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
     return linespace;
 }
-
 -(void)play:(NSString *)luomayin{
     if (player){
         [player stop];
@@ -114,9 +111,7 @@
 }
 
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
-    if (player){
-        player = nil;
-    }
+
 }
 
 @end

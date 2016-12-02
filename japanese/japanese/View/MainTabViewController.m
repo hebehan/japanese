@@ -10,26 +10,27 @@
 #import "SoundViewController.h"
 #import "CheckViewController.h"
 #import "SettingViewController.h"
+#import "Utils.h"
 
 @implementation MainTabViewController
 
 - (void)viewDidLoad {
     self.view.backgroundColor = [UIColor whiteColor];
-    self.tabBar.backgroundColor = [UIColor blackColor];
-    self.tabBar.tintColor = [UIColor blackColor];
+//    self.tabBar.backgroundColor = [UIColor blackColor];
+    self.tabBar.tintColor = [Utils getUIColorByString:@"#57cadb"];
     [self setUpAllChildVC];
     self.tabBar.translucent = NO;
 }
 
 -(void)setUpAllChildVC{
     SoundViewController *reportViewController = [[SoundViewController alloc] init];
-    [self addOneVC:reportViewController normalImage:nil selectImage:nil title:@"normal"];
+    [self addOneVC:reportViewController normalImage:[UIImage imageNamed:@"sound"] selectImage:[UIImage imageNamed:@"sound"] title:@"五十音图"];
 
     CheckViewController *newsViewController = [[CheckViewController alloc] init];
-    [self addOneVC:newsViewController normalImage:nil selectImage:nil title:@"list"];
+    [self addOneVC:newsViewController normalImage:[UIImage imageNamed:@"check"] selectImage:[UIImage imageNamed:@"check"] title:@"自测"];
 
     SettingViewController *meViewcontroller = [[SettingViewController alloc] init];
-    [self addOneVC:meViewcontroller normalImage:nil selectImage:nil title:@"collection"];
+    [self addOneVC:meViewcontroller normalImage:[UIImage imageNamed:@"setting"] selectImage:[UIImage imageNamed:@"setting"] title:@"设置"];
 
 }
 -(void)addOneVC:(UIViewController *)controller normalImage:(UIImage *)normalImage selectImage:(UIImage *)selectImage title:(NSString *)title{

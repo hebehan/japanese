@@ -17,5 +17,8 @@
 #define StartY             64
 #define NormalHeight       [UIScreen mainScreen].bounds.size.height-20-44
 #define KEYBORD_HEIGHT     258
+#define CellBackgroundColor ([Utils getUIColorByString:@"#97C2A7"])
+#define CheckCellClickedColor ([Utils getUIColorByString:@"#57CADB"])
+#define CheckCellNormalColor ([Utils getUIColorByString:@"#C9AEAE"])
 
 #endif /* AppConstant_h */

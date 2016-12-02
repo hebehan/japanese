@@ -11,10 +11,14 @@
 
 @implementation Utils
 
+static NSMutableArray *soundarray;
+static NSMutableArray *allSound;
 + (NSMutableArray *)getQYSoundArray {
-    NSMutableDictionary *allsound = [[NSMutableDictionary alloc] init];
 
-
+    if (soundarray){
+        soundarray = nil;
+    }
+    soundarray = [[NSMutableArray alloc] init];
     SoundBean *a = [[SoundBean alloc] initWith:@"あ" pianjia:@"ア" luoma:@"a"];
     SoundBean *i = [[SoundBean alloc] initWith:@"い" pianjia:@"イ" luoma:@"i"];
     SoundBean *u = [[SoundBean alloc] initWith:@"う" pianjia:@"ウ" luoma:@"u"];
@@ -72,7 +76,6 @@
 
     SoundBean *n = [[SoundBean alloc] initWith:@"ん" pianjia:@"ン" luoma:@"n"];
 
-    NSMutableArray *soundarray = [[NSMutableArray alloc] init];
     [soundarray addObject:a];
     [soundarray addObject:i];
     [soundarray addObject:u];
@@ -138,7 +141,10 @@
 }
 
 + (NSMutableArray *)getQAYSoundArray {
-    NSMutableArray *soundarray = [[NSMutableArray alloc] init];
+    if (soundarray){
+        soundarray = nil;
+    }
+    soundarray = [[NSMutableArray alloc] init];
 
 
     SoundBean *kya = [[SoundBean alloc] initWith:@"きゃ" pianjia:@"キャ" luoma:@"kya"];
@@ -210,14 +216,14 @@
 
 
     SoundBean *za = [[SoundBean alloc] initWith:@"ざ" pianjia:@"ザ" luoma:@"za"];
-    SoundBean *zi = [[SoundBean alloc] initWith:@"じ" pianjia:@"ジ" luoma:@"ji"];
+    SoundBean *zi = [[SoundBean alloc] initWith:@"じ" pianjia:@"ジ" luoma:@"ji" shuru:@"zi"];
     SoundBean *zu = [[SoundBean alloc] initWith:@"ず" pianjia:@"ズ" luoma:@"zu"];
     SoundBean *ze = [[SoundBean alloc] initWith:@"ぜ" pianjia:@"ゼ" luoma:@"ze"];
     SoundBean *zo = [[SoundBean alloc] initWith:@"ぞ" pianjia:@"ゾ" luoma:@"zo"];
 
     SoundBean *da = [[SoundBean alloc] initWith:@"だ" pianjia:@"ダ" luoma:@"da"];
-    SoundBean *di = [[SoundBean alloc] initWith:@"ぢ" pianjia:@"ヂ" luoma:@"ji"];
-    SoundBean *du = [[SoundBean alloc] initWith:@"づ" pianjia:@"ヅ" luoma:@"zu"];
+    SoundBean *di = [[SoundBean alloc] initWith:@"ぢ" pianjia:@"ヂ" luoma:@"ji" shuru:@"di"];
+    SoundBean *du = [[SoundBean alloc] initWith:@"づ" pianjia:@"ヅ" luoma:@"zu" shuru:@"du"];
     SoundBean *de = [[SoundBean alloc] initWith:@"で" pianjia:@"デ" luoma:@"de"];
     SoundBean *dou = [[SoundBean alloc] initWith:@"ど" pianjia:@"ド" luoma:@"do"];
 
@@ -233,7 +239,10 @@
     SoundBean *pe = [[SoundBean alloc] initWith:@"ぺ" pianjia:@"ペ" luoma:@"pe"];
     SoundBean *po = [[SoundBean alloc] initWith:@"ぽ" pianjia:@"ポ" luoma:@"po"];
 
-    NSMutableArray *soundarray = [[NSMutableArray alloc] init];
+    if (soundarray){
+        soundarray = nil;
+    }
+    soundarray = [[NSMutableArray alloc] init];
 
     [soundarray addObject:ga];
     [soundarray addObject:gi];
@@ -269,7 +278,10 @@
 }
 
 + (NSMutableArray *)getZAYSoundArray {
-    NSMutableArray *soundarray = [[NSMutableArray alloc] init];
+    if (soundarray){
+        soundarray = nil;
+    }
+    soundarray = [[NSMutableArray alloc] init];
 
     SoundBean *gya = [[SoundBean alloc] initWith:@"ぎゃ" pianjia:@"ギャ" luoma:@"gya"];
     SoundBean *gyu = [[SoundBean alloc] initWith:@"ぎゅ" pianjia:@"ギュ" luoma:@"gyu"];
@@ -304,6 +316,67 @@
     [soundarray addObject:pyo];
 
     return  soundarray;
+}
+
+/**
+ * 获取不同假名
+ * @param type  0全部音    1五十音
+ * @param count 0全部音 大于0 check用
+ * @return
+ */
++ (NSMutableArray *)getTypeArray:(NSInteger)type arraycount:(NSInteger)count{
+    if (allSound){
+        allSound = nil;
+    }
+    allSound = [[NSMutableArray alloc] init];
+    [allSound addObjectsFromArray:[self getQYSoundArray]];
+    if (type == 0){
+        [allSound addObjectsFromArray:[self getQAYSoundArray]];
+        [allSound addObjectsFromArray:[self getZYSoundArray]];
+        [allSound addObjectsFromArray:[self getZAYSoundArray]];
+    }
+    if (type == 0 && count == 0){//返回所有列表
+        return allSound;
+    } else {//返回随机列表，check用
+        NSInteger allcount = allSound.count;
+        for (int i = 0; i < (allcount - count/2); ++i) {//返回需求数量的一半，因为需要分离假名
+            NSInteger t = arc4random()%allSound.count;
+            [allSound removeObjectAtIndex:t];
+        }
+
+        for (int j = 0; j < count/2; ++j) {
+            SoundBean *nowbean = [allSound objectAtIndex:j];
+            SoundBean *temp = [[SoundBean alloc] initWith:nowbean.pingjia pianjia:nowbean.pianjia luoma:nowbean.luoma shuru:nowbean.shuru];
+            nowbean.checksound = nowbean.pingjia;
+            nowbean.checktype = @"pingjia";
+            temp.checksound = temp.pianjia;
+            temp.checktype = @"pianjia";
+            [allSound addObject:temp];
+        }
+
+        for (int k = 0; k < count; ++k) {
+            NSInteger t = arc4random()%allSound.count;
+            [allSound exchangeObjectAtIndex:k withObjectAtIndex:t];
+        }
+        return allSound;
+    }
+
+}
+
+
++ (UIColor *)getUIColorByString:(NSString *)hexcolor {
+    NSMutableString *color = [[NSMutableString alloc] initWithString:hexcolor];
+// 转换成标准16进制数
+    [color replaceCharactersInRange:[color rangeOfString:@"#" ] withString:@"0x"];
+// 十六进制字符串转成整形。
+    long colorLong = strtoul([color cStringUsingEncoding:NSUTF8StringEncoding], 0, 16);
+// 通过位与方法获取三色值
+    int R = (colorLong & 0xFF0000 )>>16;
+    int G = (colorLong & 0x00FF00 )>>8;
+    int B =  colorLong & 0x0000FF;
+
+//string转color
+    return [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:1.0];
 }
 
 

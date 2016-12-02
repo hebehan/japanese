@@ -15,5 +15,6 @@
 +(NSMutableArray *)getQAYSoundArray;
 +(NSMutableArray *)getZYSoundArray;
 +(NSMutableArray *)getZAYSoundArray;
-
++(NSMutableArray *)getTypeArray:(NSInteger)type arraycount:(NSInteger)count;
++(UIColor *)getUIColorByString:(NSString *)hexcolor;
 @end
